@@ -1,7 +1,23 @@
 # Twimba App - Twitter clone demo app
 This simple web app is a minimal Twitter clone, developed during the Essential JavaScript module of the Scrimba Frontend Developer Career Path.
 
+## Built with 
+- HTML5
+- CSS3
+- JavaScript
 
+## Core Functionality
+- Render tweets from data file
+- like/unlike tweets
+- retweet/un-retweet tweet (icon/counter updates only)
+- Create new tweet
+- View/hide replies on tweets (saved tweets in original data)
+
+## Future Enhancements
+- Add ability to add new replies to tweets
+- Save tweets data to local storage
+- Allow user to delete tweet
+- Update styling and responsiveness
 
 ## About Scrimba
 

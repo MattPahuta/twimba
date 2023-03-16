@@ -1,7 +1,7 @@
 import { tweetsData } from './data.js'
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid'; // get the uuid utility
 
-document.addEventListener('click', function(e){
+document.addEventListener('click', e => {
   if (e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like);
   // use else/if instead of if so only one of these options runs
@@ -33,9 +33,9 @@ function handleRetweetClick(tweetId){
     return tweet.uuid === tweetId
   })[0] // get the first (only) element of the array built by filter
   
-  if(targetTweetObj.isRetweeted){
+  if (targetTweetObj.isRetweeted){
     targetTweetObj.retweets -= 1;
-  } else{
+  } else {
     targetTweetObj.retweets += 1;
   }
   targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted // flip the boolean value
@@ -49,7 +49,7 @@ function handleReplyClick(replyId){
 function handleTweetBtnClick(){
   const tweetInput = document.getElementById('tweet-input');
 
-  if (tweetInput.value) {
+  if (tweetInput.value) { // ensure an empty tweet cannot be accepted
     tweetsData.unshift({
       handle: `@Scrimba`,
       profilePic: `images/scrimbalogo.png`,
@@ -59,7 +59,7 @@ function handleTweetBtnClick(){
       replies: [],
       isLiked: false,
       isRetweeted: false,
-      uuid: uuidv4()
+      uuid: uuidv4() // get a unique uuid
     })
     render()
     tweetInput.value = '';
@@ -92,7 +92,7 @@ function getFeedHtml() {
         })
       }
 
-      feedHtml += `
+    feedHtml += `
       <div class="tweet">
         <div class="tweet-inner">
           <img src="${tweet.profilePic}" class="profile-pic">
